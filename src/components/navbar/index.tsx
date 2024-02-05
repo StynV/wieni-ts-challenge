@@ -19,7 +19,10 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="px-2 py-6 sm:px-4 md:pt-12 dark:bg-gray-900">
+    <nav
+      className="px-2 py-6 sm:px-4 md:pt-12 dark:bg-gray-900"
+      data-testid="navbar--element"
+    >
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <Link to="/" className="mr-6 flex flex-1">
           <Logo />
@@ -27,6 +30,8 @@ export const Navbar = () => {
         </Link>
 
         <button
+          id="mobile-menu"
+          data-testid="mobile-menu"
           data-collapse-toggle="mobile-menu"
           type="button"
           className="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"

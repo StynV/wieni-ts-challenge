@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { MemoryRouter } from "react-router-dom";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { Router } from "../router";
@@ -23,6 +23,9 @@ test("full app rendering/navigating", async () => {
 
   // Check if the homepage api text is visible
   expect(await screen.findByText("/api/recipes/popular")).toBeInTheDocument();
+
+  const button = screen.getByTestId("mobile-menu");
+  fireEvent.click(button);
 
   // Check on the recipes link in the navbar
   await user.click(await screen.findByTestId(/navbar-link--recipes/));
