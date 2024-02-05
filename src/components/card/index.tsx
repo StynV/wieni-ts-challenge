@@ -7,7 +7,7 @@ export const Card = () => {
     <div className="flex border border-gray-200 bg-white/50 p-4">
       <div className="block space-y-2">
         <h2 className="text-2xl font-bold">Spritz Veneziano</h2>
-        <span className="mr-1 inline-block rounded bg-pink-200 py-1 px-2 text-xs font-semibold uppercase text-pink-600 last:mr-0">
+        <span className="mr-1 inline-block rounded bg-pink-200 px-2 py-1 text-xs font-semibold uppercase text-pink-600 last:mr-0">
           Sparkling Cocktail
         </span>
 

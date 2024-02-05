@@ -12,7 +12,7 @@ const navbarStyles = {
 
 export const Navbar = () => {
   return (
-    <nav className="py-6 px-2 dark:bg-gray-900 sm:px-4 md:pt-12">
+    <nav className="px-2 py-6 sm:px-4 md:pt-12 dark:bg-gray-900">
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <Link to="/" className="mr-6 flex flex-1">
           <Logo />
@@ -22,13 +22,13 @@ export const Navbar = () => {
         <button
           data-collapse-toggle="mobile-menu"
           type="button"
-          className="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
+          className="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="mobile-menu"
           aria-expanded="false"
         >
           <span className="sr-only">Open main menu</span>
           <svg
-            className="h-6 w-6"
+            className="size-6"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ export const Navbar = () => {
             />
           </svg>
           <svg
-            className="hidden h-6 w-6"
+            className="hidden size-6"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
