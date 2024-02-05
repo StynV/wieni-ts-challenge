@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import { ROUTES } from "../../router";
 
 import { Logo } from "../logo";
@@ -12,7 +13,10 @@ const navbarStyles = {
 };
 
 export const Navbar = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const showLinks = !isMobile || (isMobile && isMobileMenuOpen);
 
   const toggleNavBar = () => {
     setIsMobileMenuOpen((prevState) => !prevState);
@@ -65,7 +69,8 @@ export const Navbar = () => {
             />
           </svg>
         </button>
-        {isMobileMenuOpen && (
+
+        {showLinks && (
           <div className="w-full md:block md:w-auto" id="mobile-menu">
             <ul className="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
               <li>
