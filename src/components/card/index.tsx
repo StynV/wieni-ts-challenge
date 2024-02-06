@@ -7,7 +7,7 @@ interface Props {
 export const Card = ({ recipe }: Props) => {
   const { name, category, ingredients, preparation } = recipe;
   return (
-    <div className="box-border flex border border-gray-200 bg-white/50 p-4">
+    <div className="box-border flex border border-gray-200 p-4 dark:bg-white/50">
       <div className="block space-y-2">
         <h2 className="text-2xl font-bold">{name}</h2>
         {category && (
