@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import { MD } from "constants/breakpoints";
 import { ROUTES } from "../../router";
 
 import { Logo } from "../logo";
@@ -13,7 +14,7 @@ const navbarStyles = {
 };
 
 export const Navbar = () => {
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isMobile = useMediaQuery({ query: `(max-width: ${MD}px)` });
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const showLinks = !isMobile || (isMobile && isMobileMenuOpen);
