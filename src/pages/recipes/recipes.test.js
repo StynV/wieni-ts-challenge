@@ -11,7 +11,7 @@ jest.mock("api/fetchRecipes", () => ({
 }));
 
 describe("Recipes page", () => {
-  it("renders recipes", async () => {
+  it("renders recipes page", async () => {
     fetchRecipes.mockResolvedValue(mockData);
 
     render(

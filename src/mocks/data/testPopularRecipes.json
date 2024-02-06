@@ -1,0 +1,21 @@
+{
+  "data": [
+      {
+          "name": "name",
+          "glass": "glass",
+          "category": "category",
+          "ingredients": [
+              {
+                  "unit": "unit",
+                  "amount": 1,
+                  "ingredient": "ingredient"
+              },
+              {
+                  "special": "special"
+              }
+          ],
+          "garnish": "garnish",
+          "preparation": "preparation"
+      }
+  ]
+}
