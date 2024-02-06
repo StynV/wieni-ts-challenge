@@ -6,6 +6,7 @@ import { Homepage, Recipes, NotFound } from "./pages";
 export const ROUTES = {
   HOME: "/",
   RECIPES: "/recipes",
+  NOTFOUND: "*",
 };
 
 export const Router = () => {
@@ -14,7 +15,8 @@ export const Router = () => {
       <Route element={<MainLayout />}>
         <Route path={ROUTES.HOME} element={<Homepage />} />
         <Route path={ROUTES.RECIPES} element={<Recipes />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path={`${ROUTES.RECIPES}/:pageNumber`} element={<Recipes />} />
+        <Route path={ROUTES.NOTFOUND} element={<NotFound />} />
       </Route>
     </Routes>
   );

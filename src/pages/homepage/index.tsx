@@ -14,9 +14,7 @@ const Homepage = () => {
           <code className="text-sm font-light">/api/recipes/popular</code>.
         </p>
       </div>
-      <div>
-        <Card />
-      </div>
+      <div>{/* <Card /> */}</div>
     </main>
   );
 };

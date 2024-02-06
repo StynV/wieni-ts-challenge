@@ -1,0 +1,25 @@
+{
+  "data": [
+      {
+          "name": "name",
+          "glass": "glass",
+          "category": "category",
+          "ingredients": [
+              {
+                  "unit": "unit",
+                  "amount": 1,
+                  "ingredient": "ingredient"
+              },
+              {
+                  "special": "special"
+              }
+          ],
+          "garnish": "garnish",
+          "preparation": "preparation"
+      }
+  ],
+  "limit": 8,
+  "offset": 0,
+  "params": {},
+  "total": 8
+}
