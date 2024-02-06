@@ -22,7 +22,7 @@ export const DarkModeSwitch = () => {
   }, [darkMode]);
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode((prevValue) => !prevValue);
   };
 
   return (
