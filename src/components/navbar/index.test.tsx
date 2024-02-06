@@ -1,6 +1,10 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
+import { Provider } from "react-redux";
+import store from "store/store";
+import { I18nextProvider } from "react-i18next";
+import i18n from "i18next";
 import { Navbar } from ".";
 
 jest.mock("react-responsive", () => ({
@@ -12,9 +16,13 @@ describe("Navbar", () => {
     (useMediaQuery as jest.Mock).mockImplementation(() => false);
 
     const { container } = render(
-      <Router>
-        <Navbar />
-      </Router>
+      <Provider store={store}>
+        <I18nextProvider i18n={i18n}>
+          <Router>
+            <Navbar />
+          </Router>
+        </I18nextProvider>
+      </Provider>
     );
 
     expect(container).toMatchSnapshot();

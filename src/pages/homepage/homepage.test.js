@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import fetchPopularRecipes from "api/fetchPopularRecipes";
 import Homepage from "./index";
 import mockData from "../../mocks/data/testPopularRecipes.json";
+import "../../store/i18nTests.ts";
 
 jest.mock("api/fetchPopularRecipes", () => ({
   __esModule: true,
@@ -32,7 +33,7 @@ describe("Homepage", () => {
 
     await waitFor(() => {
       expect(
-        screen.getByRole("heading", { name: "Ingredients", level: 3 })
+        screen.getByRole("heading", { name: "Card.Ingredients", level: 3 })
       ).toBeVisible();
     });
 
@@ -46,7 +47,7 @@ describe("Homepage", () => {
 
     await waitFor(() => {
       expect(
-        screen.getByRole("heading", { name: "Preparation", level: 3 })
+        screen.getByRole("heading", { name: "Card.Preparation", level: 3 })
       ).toBeVisible();
     });
 
@@ -68,7 +69,7 @@ describe("Homepage", () => {
     await waitFor(() => {
       expect(
         screen.getByRole("heading", {
-          name: "It seems we've mixed up our ingredients and couldn't fetch your cocktails. Please refresh the page or try again later! 🍹",
+          name: "Fetch.Error",
           level: 1,
         })
       ).toBeVisible();

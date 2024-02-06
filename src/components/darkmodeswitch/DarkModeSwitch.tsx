@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const DarkModeSwitch = () => {
   const [darkMode, setDarkMode] = useState(() => {
@@ -10,6 +11,7 @@ export const DarkModeSwitch = () => {
 
     return window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (darkMode) {
@@ -33,7 +35,7 @@ export const DarkModeSwitch = () => {
       aria-controls="button--dark-mode"
       onClick={toggleDarkMode}
     >
-      <span className="sr-only">Enable/disable dark mode</span>
+      <span className="sr-only">{t("DarkModeSwitch.Icon")}</span>
       {darkMode ? (
         <svg
           viewBox="0 0 48 48"

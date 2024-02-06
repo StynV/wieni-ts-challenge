@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { MD } from "constants/breakpoints";
 import { DarkModeSwitch } from "components/darkmodeswitch/DarkModeSwitch";
+import { useTranslation } from "react-i18next";
+import { LanguageSwitch } from "components/languageswitch/LanguageSwitch";
 import { ROUTES } from "../../router";
 
 import { Logo } from "../logo";
@@ -11,7 +13,7 @@ const navbarStyles = {
   default:
     "block border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 dark:hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-gray-500 md:dark:hover:bg-transparent md:dark:hover:text-white",
   active:
-    "block rounded bg-blue-700 py-2 pr-4 pl-3 text-white dark:text-white md:bg-transparent md:p-0 md:text-gray-900 underline dark:md:text-white",
+    "block rounded bg-blue-700 py-2 pr-4 pl-3 dark:text-white md:bg-transparent md:p-0 md:text-gray-900 underline dark:md:text-white",
 };
 
 export const Navbar = () => {
@@ -23,6 +25,7 @@ export const Navbar = () => {
   const toggleNavBar = () => {
     setIsMobileMenuOpen((prevState) => !prevState);
   };
+  const { t } = useTranslation();
 
   return (
     <nav
@@ -32,7 +35,7 @@ export const Navbar = () => {
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <Link to="/" className="mr-6 flex flex-1">
           <Logo />
-          <span className="sr-only">Wieni</span>
+          <span className="sr-only">{t("Navbar.Logo")}</span>
         </Link>
 
         <button
@@ -45,7 +48,7 @@ export const Navbar = () => {
           aria-expanded={isMobileMenuOpen ? "true" : "false"}
           onClick={toggleNavBar}
         >
-          <span className="sr-only">Open main menu</span>
+          <span className="sr-only">{t("Navbar.Button")}</span>
           <svg
             className="size-6"
             fill="currentColor"
@@ -92,7 +95,7 @@ export const Navbar = () => {
                     id="navbar-link--home"
                     aria-labelledby="navbar-link--home"
                   >
-                    Home
+                    {t("Navbar.Home")}
                   </NavLink>
                 </button>
               </li>
@@ -113,12 +116,15 @@ export const Navbar = () => {
                     id="navbar-link--recipes"
                     aria-labelledby="navbar-link--recipes"
                   >
-                    Recipes
+                    {t("Navbar.Recipes")}
                   </NavLink>
                 </button>
               </li>
               <li>
                 <DarkModeSwitch />
+              </li>
+              <li>
+                <LanguageSwitch />
               </li>
             </ul>
           </div>

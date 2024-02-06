@@ -1,4 +1,5 @@
 import { Recipe } from "types";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   recipe: Recipe;
@@ -6,6 +7,8 @@ interface Props {
 
 export const Card = ({ recipe }: Props) => {
   const { name, category, ingredients, preparation } = recipe;
+  const { t } = useTranslation();
+
   return (
     <div className="box-border flex border border-gray-200 p-4 dark:bg-white/50">
       <div className="block space-y-2">
@@ -15,7 +18,7 @@ export const Card = ({ recipe }: Props) => {
             {category}
           </span>
         )}
-        <h3 className="text-lg font-bold">Ingredients</h3>
+        <h3 className="text-lg font-bold">{t("Card.Ingredients")}</h3>
         <ul className="list-inside list-disc px-1 text-sm">
           {ingredients.map((ingredientItem) => {
             if ("ingredient" in ingredientItem) {
@@ -29,7 +32,7 @@ export const Card = ({ recipe }: Props) => {
           })}
         </ul>
 
-        <h3 className="text-lg font-bold">Preparation</h3>
+        <h3 className="text-lg font-bold">{t("Card.Preparation")}</h3>
         <div className="text-sm">{preparation}</div>
       </div>
     </div>

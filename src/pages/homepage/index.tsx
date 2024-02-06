@@ -2,11 +2,13 @@ import fetchPopularRecipes from "api/fetchPopularRecipes";
 import { Card } from "components/card";
 import { useEffect, useState } from "react";
 import { Recipe } from "types";
+import { useTranslation } from "react-i18next";
 
-// TODO: REMOVE THIS CODE AND IMPLEMENT A NICE GRID!
 const Homepage = () => {
   const [recipes, setPopularRecipes] = useState<Recipe[]>([]);
   const [fetchError, setFetchError] = useState("");
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,16 +16,14 @@ const Homepage = () => {
         const apiData = await fetchPopularRecipes();
         setPopularRecipes(apiData.data);
       } catch (error) {
-        setFetchError(
-          "It seems we've mixed up our ingredients and couldn't fetch your cocktails. Please refresh the page or try again later! 🍹"
-        );
+        setFetchError(t("Fetch.Error"));
         // eslint-disable-next-line no-console
         console.error(`Fetching data failed: ${error}`);
       }
     };
 
     fetchData();
-  }, []);
+  }, [t]);
 
   if (fetchError !== "") {
     return (

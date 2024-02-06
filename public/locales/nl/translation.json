@@ -1,0 +1,23 @@
+{
+    "Card": {
+        "Ingredients": "Ingredienten",
+        "Preparation": "Voorbereiding"
+    },
+    "DarkModeSwitch": {
+        "Icon": "dark mode aan of uit zetten"
+    },
+    "Navbar": {
+        "Logo": "Wieni",
+        "Button": "Main menu openen",
+        "Home": "Home",
+        "Recipes": "Recepten"
+    },
+    "Fetch": {
+        "Error": "Het lijkt erop dat we onze ingrediënten fout gemixt hebben en jouw cocktail niet konden ophalen. Refresh de pagina of probeer later opnieuw. 🍹" 
+    },
+    "NotFound": {
+        "Intro": "Lijkt erop dat je in het foute drankje hebt geroerd. Deze pagina moet on the rocks zijn. Laten we alles shaken en je ",
+        "Link": "terug brengen naar de homepage",
+        "Outro": ", waar het echte feestje is! 🍸"
+    }
+}

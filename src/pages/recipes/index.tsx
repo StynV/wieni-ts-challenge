@@ -3,6 +3,7 @@ import { Card } from "components/card";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Recipe } from "types";
+import { useTranslation } from "react-i18next";
 
 const Recipes = () => {
   const PAGE_LIMIT: number = 8;
@@ -15,22 +16,22 @@ const Recipes = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [fetchError, setFetchError] = useState("");
 
+  const { t } = useTranslation();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const apiData = await fetchRecipes(PAGE_LIMIT, offset);
         setRecipes(apiData.data);
       } catch (error) {
-        setFetchError(
-          "It seems we've mixed up our ingredients and couldn't fetch your cocktails. Please refresh the page or try again later! 🍹"
-        );
+        setFetchError(t("Fetch.Error"));
         // eslint-disable-next-line no-console
         console.error(`Fetching data failed: ${error}`);
       }
     };
 
     fetchData();
-  }, [offset]);
+  }, [offset, t]);
 
   if (fetchError !== "") {
     return (

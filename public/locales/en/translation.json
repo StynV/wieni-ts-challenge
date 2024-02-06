@@ -1,0 +1,23 @@
+{
+    "Card": {
+        "Ingredients": "Ingredients",
+        "Preparation": "Preparation"
+    },
+    "DarkModeSwitch": {
+        "Icon": "Enable/disable dark mode"
+    },
+    "Navbar": {
+        "Logo": "Wieni",
+        "Button": "Open main menu",
+        "Home": "Home",
+        "Recipes": "Recipes"
+    },
+    "Fetch": {
+        "Error": "It seems we've mixed up our ingredients and couldn't fetch your cocktails. Please refresh the page or try again later! 🍹" 
+    },
+    "NotFound": {
+        "Intro": "Looks like you've stirred the wrong drink. This page must be on the rocks. Let's shake things up and get you ",
+        "Link": "back to the homepage",
+        "Outro": ", where the real party is! 🍸"
+    }
+}
