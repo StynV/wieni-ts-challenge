@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { MainLayout } from "./layouts/main";
 
-import { Homepage, Recipes } from "./pages";
+import { Homepage, Recipes, NotFound } from "./pages";
 
 export const ROUTES = {
   HOME: "/",
@@ -14,6 +14,7 @@ export const Router = () => {
       <Route element={<MainLayout />}>
         <Route path={ROUTES.HOME} element={<Homepage />} />
         <Route path={ROUTES.RECIPES} element={<Recipes />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );
