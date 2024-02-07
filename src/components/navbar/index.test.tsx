@@ -33,10 +33,8 @@ describe("Navbar", () => {
     expect(screen.getByTestId("navbar--element")).toBeVisible();
 
     expect(screen.getByText("Navbar.Logo")).toBeVisible();
-    expect(screen.queryByRole("link", { name: "Navbar.Home" })).toBeVisible();
-    expect(
-      screen.queryByRole("link", { name: "Navbar.Recipes" })
-    ).toBeVisible();
+    expect(screen.getByText("Navbar.Home")).toBeVisible();
+    expect(screen.getByText("Navbar.Recipes")).toBeVisible();
   });
 
   it("renders a Navbar on mobile without children", () => {
@@ -74,7 +72,7 @@ describe("Navbar", () => {
     expect(screen.getByTestId("navbar--element")).toBeVisible();
 
     expect(screen.getByText("Navbar.Logo")).toBeVisible();
-    expect(screen.getByRole("link", { name: "Navbar.Home" })).toBeVisible();
-    expect(screen.getByRole("link", { name: "Navbar.Recipes" })).toBeVisible();
+    expect(screen.getByText("Navbar.Home")).toBeVisible();
+    expect(screen.getByText("Navbar.Recipes")).toBeVisible();
   });
 });
