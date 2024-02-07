@@ -1,11 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navbar renders a Navbar on desktop 1`] = `<div />`;
-
-exports[`Navbar renders a Navbar on mobile with children 1`] = `
+exports[`Navbar renders a Navbar on desktop 1`] = `
 <div>
   <nav
-    class="px-2 py-6 sm:px-4 md:pt-12 dark:bg-gray-900"
+    class="px-2 py-6 dark:bg-gray-900 sm:px-4 md:pt-12"
     data-testid="navbar--element"
   >
     <div
@@ -45,13 +43,13 @@ exports[`Navbar renders a Navbar on mobile with children 1`] = `
         <span
           class="sr-only"
         >
-          Wieni
+          Navbar.Logo
         </span>
       </a>
       <button
         aria-controls="mobile-menu"
-        aria-expanded="true"
-        class="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-expanded="false"
+        class="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
         data-collapse-toggle="mobile-menu"
         data-testid="mobile-menu"
         id="mobile-menu"
@@ -60,7 +58,7 @@ exports[`Navbar renders a Navbar on mobile with children 1`] = `
         <span
           class="sr-only"
         >
-          Open main menu
+          Navbar.Button
         </span>
         <svg
           class="size-6"
@@ -105,12 +103,12 @@ exports[`Navbar renders a Navbar on mobile with children 1`] = `
               <a
                 aria-current="page"
                 aria-labelledby="navbar-link--home"
-                class="block rounded bg-blue-700 py-2 pr-4 pl-3 text-white dark:text-white md:bg-transparent md:p-0 md:text-gray-900 underline dark:md:text-white"
+                class="block rounded bg-blue-700 py-2 pr-4 pl-3 dark:text-white md:bg-transparent md:p-0 md:text-gray-900 underline dark:md:text-white"
                 data-testid="navbar-link--home"
                 href="/"
                 id="navbar-link--home"
               >
-                Home
+                Navbar.Home
               </a>
             </button>
           </li>
@@ -124,14 +122,24 @@ exports[`Navbar renders a Navbar on mobile with children 1`] = `
             >
               <a
                 aria-labelledby="navbar-link--recipes"
-                class="block border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-gray-500 md:dark:hover:bg-transparent md:dark:hover:text-white"
+                class="block border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 dark:hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-gray-500 md:dark:hover:bg-transparent md:dark:hover:text-white"
                 data-testid="navbar-link--recipes"
                 href="/recipes"
                 id="navbar-link--recipes"
               >
-                Recipes
+                Navbar.Recipes
               </a>
             </button>
+          </li>
+          <li>
+            <div
+              data-testid="mock-DarkModeSwitch"
+            />
+          </li>
+          <li>
+            <div
+              data-testid="mock-LanguageSwitch"
+            />
           </li>
         </ul>
       </div>
@@ -140,4 +148,240 @@ exports[`Navbar renders a Navbar on mobile with children 1`] = `
 </div>
 `;
 
-exports[`Navbar renders a Navbar on mobile without children 1`] = `<div />`;
+exports[`Navbar renders a Navbar on mobile with children 1`] = `
+<div>
+  <nav
+    class="px-2 py-6 dark:bg-gray-900 sm:px-4 md:pt-12"
+    data-testid="navbar--element"
+  >
+    <div
+      class="container mx-auto flex flex-wrap items-center justify-between"
+    >
+      <a
+        class="mr-6 flex flex-1"
+        href="/"
+      >
+        <svg
+          class="dark:text-white"
+          fill="none"
+          height="24"
+          viewBox="0 0 94 24"
+          width="94"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M35.8666 21.0859V23.5013H22.1602V21.0859H27.7216V8.37405H22.5023V5.95868H30.3022V21.0859H35.8666ZM30.569 3.07938H27.4577V0H30.569V3.07938ZM0 5.9585H2.54875L5.26278 19.5866H5.32947L8.51903 9.29304H11.0185L14.208 19.5866H14.2718L17.0207 5.9585H19.5346L15.7941 23.5011H13.2396L9.79775 12.413H9.73106L6.28924 23.5011H3.74049L0 5.9585ZM45.6959 5.45117C40.5694 5.45117 37.0898 9.23515 37.0898 14.7299C37.0898 20.2594 40.5955 23.9999 45.6959 23.9999C49.1029 23.9999 51.8198 22.4109 53.7423 19.2649L51.556 17.876C50.167 20.358 48.146 21.5498 45.6959 21.5498C42.3207 21.5498 39.9691 19.1982 39.8039 15.6897H54.1395V14.7299C54.1395 9.15686 50.7296 5.45117 45.6959 5.45117ZM45.6959 7.91003C48.8738 7.91003 51.1268 10.0963 51.3907 13.4715H39.8706C40.0358 10.2297 42.3874 7.91003 45.6959 7.91003ZM57.4462 5.95872H60.021V7.91015H60.0848C61.4419 6.35597 63.5934 5.46289 65.884 5.46289C70.419 5.46289 73.1678 8.34219 73.1678 12.9758V23.5013H70.5843V13.6717C70.5843 9.96307 68.83 7.87246 65.6869 7.87246C62.2798 7.87826 60.021 10.0617 60.021 13.4397V23.5013H57.4375L57.4462 5.95872ZM90.3275 23.5013V21.0859H84.7777V5.95868H76.9661V8.37405H82.1854V21.0859H76.6211V23.5013H90.3275ZM81.9187 3.07938H85.0299V0H81.9187V3.07938Z"
+            fill="currentColor"
+          />
+        </svg>
+        <svg
+          class="flex-1"
+          fill="none"
+          height="24"
+          preserveAspectRatio="none"
+          viewBox="0 0 24 24"
+          width="100%"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M24 21.0859H0V23.5013H24V21.0859Z"
+            fill="currentColor"
+          />
+        </svg>
+        <span
+          class="sr-only"
+        >
+          Navbar.Logo
+        </span>
+      </a>
+      <button
+        aria-controls="mobile-menu"
+        aria-expanded="true"
+        class="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
+        data-collapse-toggle="mobile-menu"
+        data-testid="mobile-menu"
+        id="mobile-menu"
+        type="button"
+      >
+        <span
+          class="sr-only"
+        >
+          Navbar.Button
+        </span>
+        <svg
+          class="size-6"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            fill-rule="evenodd"
+          />
+        </svg>
+        <svg
+          class="hidden size-6"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </button>
+      <div
+        class="w-full md:block md:w-auto"
+        id="mobile-menu"
+      >
+        <ul
+          class="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium"
+        >
+          <li>
+            <button
+              aria-controls="button--home"
+              aria-expanded="true"
+              class="w-full text-left"
+              id="button--home"
+              type="button"
+            >
+              <a
+                aria-current="page"
+                aria-labelledby="navbar-link--home"
+                class="block rounded bg-blue-700 py-2 pr-4 pl-3 dark:text-white md:bg-transparent md:p-0 md:text-gray-900 underline dark:md:text-white"
+                data-testid="navbar-link--home"
+                href="/"
+                id="navbar-link--home"
+              >
+                Navbar.Home
+              </a>
+            </button>
+          </li>
+          <li>
+            <button
+              aria-controls="button--recipes"
+              aria-expanded="true"
+              class="w-full text-left"
+              id="button--recipes"
+              type="button"
+            >
+              <a
+                aria-labelledby="navbar-link--recipes"
+                class="block border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 dark:hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-gray-500 md:dark:hover:bg-transparent md:dark:hover:text-white"
+                data-testid="navbar-link--recipes"
+                href="/recipes"
+                id="navbar-link--recipes"
+              >
+                Navbar.Recipes
+              </a>
+            </button>
+          </li>
+          <li>
+            <div
+              data-testid="mock-DarkModeSwitch"
+            />
+          </li>
+          <li>
+            <div
+              data-testid="mock-LanguageSwitch"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Navbar renders a Navbar on mobile without children 1`] = `
+<div>
+  <nav
+    class="px-2 py-6 dark:bg-gray-900 sm:px-4 md:pt-12"
+    data-testid="navbar--element"
+  >
+    <div
+      class="container mx-auto flex flex-wrap items-center justify-between"
+    >
+      <a
+        class="mr-6 flex flex-1"
+        href="/"
+      >
+        <svg
+          class="dark:text-white"
+          fill="none"
+          height="24"
+          viewBox="0 0 94 24"
+          width="94"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M35.8666 21.0859V23.5013H22.1602V21.0859H27.7216V8.37405H22.5023V5.95868H30.3022V21.0859H35.8666ZM30.569 3.07938H27.4577V0H30.569V3.07938ZM0 5.9585H2.54875L5.26278 19.5866H5.32947L8.51903 9.29304H11.0185L14.208 19.5866H14.2718L17.0207 5.9585H19.5346L15.7941 23.5011H13.2396L9.79775 12.413H9.73106L6.28924 23.5011H3.74049L0 5.9585ZM45.6959 5.45117C40.5694 5.45117 37.0898 9.23515 37.0898 14.7299C37.0898 20.2594 40.5955 23.9999 45.6959 23.9999C49.1029 23.9999 51.8198 22.4109 53.7423 19.2649L51.556 17.876C50.167 20.358 48.146 21.5498 45.6959 21.5498C42.3207 21.5498 39.9691 19.1982 39.8039 15.6897H54.1395V14.7299C54.1395 9.15686 50.7296 5.45117 45.6959 5.45117ZM45.6959 7.91003C48.8738 7.91003 51.1268 10.0963 51.3907 13.4715H39.8706C40.0358 10.2297 42.3874 7.91003 45.6959 7.91003ZM57.4462 5.95872H60.021V7.91015H60.0848C61.4419 6.35597 63.5934 5.46289 65.884 5.46289C70.419 5.46289 73.1678 8.34219 73.1678 12.9758V23.5013H70.5843V13.6717C70.5843 9.96307 68.83 7.87246 65.6869 7.87246C62.2798 7.87826 60.021 10.0617 60.021 13.4397V23.5013H57.4375L57.4462 5.95872ZM90.3275 23.5013V21.0859H84.7777V5.95868H76.9661V8.37405H82.1854V21.0859H76.6211V23.5013H90.3275ZM81.9187 3.07938H85.0299V0H81.9187V3.07938Z"
+            fill="currentColor"
+          />
+        </svg>
+        <svg
+          class="flex-1"
+          fill="none"
+          height="24"
+          preserveAspectRatio="none"
+          viewBox="0 0 24 24"
+          width="100%"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M24 21.0859H0V23.5013H24V21.0859Z"
+            fill="currentColor"
+          />
+        </svg>
+        <span
+          class="sr-only"
+        >
+          Navbar.Logo
+        </span>
+      </a>
+      <button
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        class="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
+        data-collapse-toggle="mobile-menu"
+        data-testid="mobile-menu"
+        id="mobile-menu"
+        type="button"
+      >
+        <span
+          class="sr-only"
+        >
+          Navbar.Button
+        </span>
+        <svg
+          class="size-6"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            fill-rule="evenodd"
+          />
+        </svg>
+        <svg
+          class="hidden size-6"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </nav>
+</div>
+`;

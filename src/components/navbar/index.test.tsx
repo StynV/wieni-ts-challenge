@@ -1,14 +1,21 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
-import { Provider } from "react-redux";
-import store from "store/store";
-import { I18nextProvider } from "react-i18next";
-import i18n from "i18next";
 import { Navbar } from ".";
+import "../../store/i18nTests";
 
 jest.mock("react-responsive", () => ({
   useMediaQuery: jest.fn(),
+}));
+
+jest.mock("components/darkmodeswitch/DarkModeSwitch", () => ({
+  __esModule: true,
+  DarkModeSwitch: () => <div data-testid="mock-DarkModeSwitch" />,
+}));
+
+jest.mock("components/languageswitch/LanguageSwitch", () => ({
+  __esModule: true,
+  LanguageSwitch: () => <div data-testid="mock-LanguageSwitch" />,
 }));
 
 describe("Navbar", () => {
@@ -16,22 +23,20 @@ describe("Navbar", () => {
     (useMediaQuery as jest.Mock).mockImplementation(() => false);
 
     const { container } = render(
-      <Provider store={store}>
-        <I18nextProvider i18n={i18n}>
-          <Router>
-            <Navbar />
-          </Router>
-        </I18nextProvider>
-      </Provider>
+      <Router>
+        <Navbar />
+      </Router>
     );
 
     expect(container).toMatchSnapshot();
 
     expect(screen.getByTestId("navbar--element")).toBeVisible();
 
-    expect(screen.getByRole("link", { name: "Wieni" })).toBeVisible();
-    expect(screen.queryByRole("link", { name: "Home" })).toBeVisible();
-    expect(screen.queryByRole("link", { name: "Recipes" })).toBeVisible();
+    expect(screen.getByText("Navbar.Logo")).toBeVisible();
+    expect(screen.queryByRole("link", { name: "Navbar.Home" })).toBeVisible();
+    expect(
+      screen.queryByRole("link", { name: "Navbar.Recipes" })
+    ).toBeVisible();
   });
 
   it("renders a Navbar on mobile without children", () => {
@@ -47,9 +52,9 @@ describe("Navbar", () => {
 
     expect(screen.getByTestId("navbar--element")).toBeVisible();
 
-    expect(screen.getByRole("link", { name: "Wieni" })).toBeVisible();
-    expect(screen.queryByRole("link", { name: "Home" })).toBeNull();
-    expect(screen.queryByRole("link", { name: "Recipes" })).toBeNull();
+    expect(screen.getByText("Navbar.Logo")).toBeVisible();
+    expect(screen.queryByRole("link", { name: "Navbar.Home" })).toBeNull();
+    expect(screen.queryByRole("link", { name: "Navbar.Recipes" })).toBeNull();
   });
 
   it("renders a Navbar on mobile with children", () => {
@@ -68,8 +73,8 @@ describe("Navbar", () => {
 
     expect(screen.getByTestId("navbar--element")).toBeVisible();
 
-    expect(screen.getByRole("link", { name: "Wieni" })).toBeVisible();
-    expect(screen.getByRole("link", { name: "Home" })).toBeVisible();
-    expect(screen.getByRole("link", { name: "Recipes" })).toBeVisible();
+    expect(screen.getByText("Navbar.Logo")).toBeVisible();
+    expect(screen.getByRole("link", { name: "Navbar.Home" })).toBeVisible();
+    expect(screen.getByRole("link", { name: "Navbar.Recipes" })).toBeVisible();
   });
 });
