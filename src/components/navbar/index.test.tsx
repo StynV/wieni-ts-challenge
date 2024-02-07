@@ -7,6 +7,11 @@ jest.mock("react-responsive", () => ({
   useMediaQuery: jest.fn(),
 }));
 
+jest.mock("components/darkmodeswitch/DarkModeSwitch", () => ({
+  __esModule: true,
+  DarkModeSwitch: () => <div data-testid="mock-DarkModeSwitch" />,
+}));
+
 describe("Navbar", () => {
   it("renders a Navbar on desktop", () => {
     (useMediaQuery as jest.Mock).mockImplementation(() => false);

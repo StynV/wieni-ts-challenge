@@ -43,9 +43,9 @@ export const Navbar = () => {
           className="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
           aria-controls="mobile-menu"
           aria-expanded={isMobileMenuOpen ? "true" : "false"}
+          aria-label="Open main menu"
           onClick={toggleNavBar}
         >
-          <span className="sr-only">Open main menu</span>
           <svg
             className="size-6"
             fill="currentColor"
@@ -73,49 +73,33 @@ export const Navbar = () => {
         </button>
 
         {showLinks && (
-          <div className="w-full md:block md:w-auto" id="mobile-menu">
+          <div className="w-full md:block md:w-auto" id="mobile-menu-links">
             <ul className="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
               <li>
-                <button
-                  type="button"
-                  className="w-full text-left"
-                  id="button--home"
-                  aria-expanded="true"
-                  aria-controls="button--home"
+                <NavLink
+                  data-testid="navbar-link--home"
+                  to={ROUTES.HOME}
+                  className={({ isActive }) =>
+                    isActive ? navbarStyles.active : navbarStyles.default
+                  }
+                  id="navbar-link--home"
+                  aria-label="Home"
                 >
-                  <NavLink
-                    data-testid="navbar-link--home"
-                    to={ROUTES.HOME}
-                    className={({ isActive }) =>
-                      isActive ? navbarStyles.active : navbarStyles.default
-                    }
-                    id="navbar-link--home"
-                    aria-labelledby="navbar-link--home"
-                  >
-                    Home
-                  </NavLink>
-                </button>
+                  Home
+                </NavLink>
               </li>
               <li>
-                <button
-                  type="button"
-                  className="w-full text-left"
-                  id="button--recipes"
-                  aria-expanded="true"
-                  aria-controls="button--recipes"
+                <NavLink
+                  data-testid="navbar-link--recipes"
+                  to={ROUTES.RECIPES}
+                  className={({ isActive }) =>
+                    isActive ? navbarStyles.active : navbarStyles.default
+                  }
+                  id="navbar-link--recipes"
+                  aria-label="Recipes"
                 >
-                  <NavLink
-                    data-testid="navbar-link--recipes"
-                    to={ROUTES.RECIPES}
-                    className={({ isActive }) =>
-                      isActive ? navbarStyles.active : navbarStyles.default
-                    }
-                    id="navbar-link--recipes"
-                    aria-labelledby="navbar-link--recipes"
-                  >
-                    Recipes
-                  </NavLink>
-                </button>
+                  Recipes
+                </NavLink>
               </li>
               <li>
                 <DarkModeSwitch />
