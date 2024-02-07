@@ -19,5 +19,8 @@
         "Intro": "Looks like you've stirred the wrong drink. This page must be on the rocks. Let's shake things up and get you ",
         "Link": "back to the homepage",
         "Outro": ", where the real party is! 🍸"
+    },
+    "LanguageSwitch": {
+        "ChangeLanguage": "Change language:"
     }
 }

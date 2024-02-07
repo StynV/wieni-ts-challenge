@@ -14,7 +14,7 @@ export const Card = ({ recipe }: Props) => {
       <div className="block space-y-2">
         <h2 className="text-2xl font-bold">{name}</h2>
         {category && (
-          <span className="mr-1 inline-block rounded bg-pink-200 px-2 py-1 text-xs font-semibold uppercase text-pink-600 last:mr-0">
+          <span className="mr-1 inline-block rounded bg-pink-200 px-2 py-1 text-xs font-semibold uppercase text-gray-800 last:mr-0">
             {category}
           </span>
         )}
